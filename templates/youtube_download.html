@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download from YouTube</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #141e30, #243b55);
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #243b55;
+            color: white;
+        }
+        button {
+            background: #1f4068;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #4caf50;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .back-link:hover {
+            color: white;
+        }
+        .dropdown-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .dropdown-container label {
+            margin-bottom: 5px;
+        }
+        select {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #243b55;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Download from YouTube</h1>
+    <div class="form-container">
+        <form action="/download" method="POST"> <input type="hidden" name="platform" value="youtube">
+            <label for="youtube_url">YouTube URL:</label>
+            <input type="text" id="youtube_url" name="url" placeholder="Paste YouTube link here">
+
+            <div class="dropdown-container">
+                <div>
+                    <label for="format">Format:</label>
+                    <select id="format" name="format">
+                        <option value="mp4" selected>MP4 (Video)</option>
+                        <option value="mp3">MP3 (Audio)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="quality">Quality:</label>
+                    <select id="quality" name="quality">
+                        <option value="highest" selected>Highest Available</option>
+                        <option value="1080p">1080p</option>
+                        <option value="720p">720p</option>
+                        <option value="480p">480p</option>
+                        <option value="audio_only">Audio Only</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit">Download</button>
+        </form>
+    </div>
+    <a href="/" class="back-link">Back to Main Page</a>
+</body>
+</html>

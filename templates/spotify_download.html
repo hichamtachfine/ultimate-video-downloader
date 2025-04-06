@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download from spotify</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #141e30, #243b55);
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #243b55;
+            color: white;
+        }
+        button {
+            background: #1f4068;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #4caf50;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .back-link:hover {
+            color: white;
+        }
+        .dropdown-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .dropdown-container label {
+            margin-bottom: 5px;
+        }
+        select {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #243b55;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Download from spotify</h1>
+    <div class="form-container">
+        <form action="/download" method="POST">
+            <input type="hidden" name="platform" value="spotify">
+            <label for="spotify_url">Spotify Video URL:</label>
+            <input type="text" id="spotify_url" name="url" placeholder="Paste spotify link here">
+            <button type="submit">Download</button>
+        </form>
+    </div>
+    <a href="/" class="back-link">Back to Main Page</a>
+</body>
+</html>
