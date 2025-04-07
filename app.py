@@ -83,4 +83,5 @@ def serve_download(filename):
     return send_from_directory(app.config['DOWNLOAD_FOLDER'], filename, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))  # Use Azure's PORT env var, or fallback to 8080
+    app.run(host="0.0.0.0", port=port, debug=True)
